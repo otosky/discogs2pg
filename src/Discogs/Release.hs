@@ -93,28 +93,28 @@ releaseStore x = Store
   { getStore=x
   , getName="releases"
   , getTables = [
-      TableInfo "release" ["id", "master_id", "status",
+      TableInfo "temp_release" ["id", "master_id", "status",
                            "title", "country", "released", "data_quality",
                            "notes", "genres", "styles"]
-    , TableInfo "release_artist" ["release_id", "artist_id",
+    , TableInfo "temp_release_artist" ["release_id", "artist_id",
                                   "anv", "join_relation", "role"]
-    , TableInfo "release_extraartist" ["release_id", "artist_id",
+    , TableInfo "temp_release_extraartist" ["release_id", "artist_id",
                                        "anv", "join_relation", "role"]
-    , TableInfo "release_label" ["release_id", "label", "catno"]
-    , TableInfo "release_format" ["release_id", "format_name",
+    , TableInfo "temp_release_label" ["release_id", "label", "catno"]
+    , TableInfo "temp_release_format" ["release_id", "format_name",
                                   "format_text", "qty", "descriptions"]
-    , TableInfo "track" ["release_id", "idx", "title", "position", "duration"]
-    , TableInfo "track_artist" ["track_idx", "release_id",
+    , TableInfo "temp_track" ["release_id", "idx", "title", "position", "duration"]
+    , TableInfo "temp_track_artist" ["track_idx", "release_id",
                                 "artist_id", "anv",
                                 "join_relation", "role"]
-    , TableInfo "track_extraartist" ["track_idx", "release_id",
+    , TableInfo "temp_track_extraartist" ["track_idx", "release_id",
                                      "artist_id", "anv",
                                      "join_relation", "role"]
-    , TableInfo "release_identifier" ["release_id", "description",
+    , TableInfo "temp_release_identifier" ["release_id", "description",
                                       "type", "value"]
-    , TableInfo "release_video" ["release_id", "duration",
+    , TableInfo "temp_release_video" ["release_id", "duration",
                                  "src", "title"]
-    , TableInfo "release_company" ["release_id", "company_id",
+    , TableInfo "temp_release_company" ["release_id", "company_id",
                                    "catno", "entity_type",
                                    "entity_type_name"]
     ]

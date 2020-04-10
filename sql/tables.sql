@@ -3,7 +3,7 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
-CREATE TABLE artist (
+CREATE TABLE temp_artist (
     id integer NOT NULL,
     name text NOT NULL,
     realname text,
@@ -17,7 +17,7 @@ CREATE TABLE artist (
     data_quality text
 );
 
-CREATE TABLE label (
+CREATE TABLE temp_label (
     id integer NOT NULL,
     name text NOT NULL,
     contactinfo text,
@@ -28,7 +28,7 @@ CREATE TABLE label (
     data_quality text
 );
 
-CREATE TABLE release (
+CREATE TABLE temp_release (
     id integer NOT NULL,
     status text,
     title text,
@@ -41,7 +41,7 @@ CREATE TABLE release (
     data_quality text
 );
 
-CREATE TABLE release_artist (
+CREATE TABLE temp_release_artist (
     release_id integer NOT NULL,
     artist_id integer NOT NULL,
     anv text,
@@ -49,7 +49,7 @@ CREATE TABLE release_artist (
     role text
 );
 
-CREATE TABLE release_extraartist (
+CREATE TABLE temp_release_extraartist (
     release_id integer NOT NULL,
     artist_id integer NOT NULL,
     anv text,
@@ -57,7 +57,7 @@ CREATE TABLE release_extraartist (
     role text
 );
 
-CREATE TABLE release_format (
+CREATE TABLE temp_release_format (
     release_id integer NOT NULL,
     format_name text,
     format_text text,
@@ -65,27 +65,27 @@ CREATE TABLE release_format (
     descriptions text[]
 );
 
-CREATE TABLE release_label (
+CREATE TABLE temp_release_label (
     release_id integer NOT NULL,
     label text,
     catno text
 );
 
-CREATE TABLE release_identifier (
+CREATE TABLE temp_release_identifier (
     release_id integer NOT NULL,
     description text,
     type text,
     value text
 );
 
-CREATE TABLE release_video (
+CREATE TABLE temp_release_video (
     release_id integer NOT NULL,
     duration integer,
     src text,
     title text
 );
 
-CREATE TABLE release_company (
+CREATE TABLE temp_release_company (
     release_id integer NOT NULL,
     company_id integer NOT NULL,
     entity_type integer NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE release_company (
     catno text
 );
 
-CREATE TABLE track (
+CREATE TABLE temp_track (
     release_id integer NOT NULL,
     idx integer NOT NULL,
     position text,
@@ -101,7 +101,7 @@ CREATE TABLE track (
     duration text
 );
 
-CREATE TABLE track_artist (
+CREATE TABLE temp_track_artist (
     track_idx text NOT NULL,
     release_id integer NOT NULL,
     artist_id integer NOT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE track_artist (
     role text
 );
 
-CREATE TABLE track_extraartist (
+CREATE TABLE temp_track_extraartist (
     track_idx text NOT NULL,
     release_id integer NOT NULL,
     artist_id integer NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE track_extraartist (
     role text
 );
 
-CREATE TABLE master (
+CREATE TABLE temp_master (
     id integer NOT NULL,
     title text,
     main_release integer NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE master (
     data_quality text
  );
 
-CREATE TABLE master_artist (
+CREATE TABLE temp_master_artist (
     master_id integer NOT NULL,
     artist_id integer NOT NULL,
     anv text,

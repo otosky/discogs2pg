@@ -36,10 +36,10 @@ masterStore x = Store
   { getStore=x
   , getName="masters"
   , getTables=[
-      TableInfo "master" ["id", "title", "main_release",
+      TableInfo "temp_master" ["id", "title", "main_release",
                          "year", "notes", "data_quality",
                          "genres", "styles"]
-    , TableInfo "master_artist" ["master_id", "artist_id",
+    , TableInfo "temp_master_artist" ["master_id", "artist_id",
                                  "anv", "join_relation", "role"]
     ]
   }

@@ -34,7 +34,7 @@ labelStore x = Store
   { getStore=x
   , getName="labels"
   , getTables=[
-      TableInfo "label" ["id", "name", "contactinfo",
+      TableInfo "temp_label" ["id", "name", "contactinfo",
                          "parent_label", "profile", "data_quality",
                          "urls", "sublabels"]
     ]

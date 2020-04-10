@@ -36,7 +36,7 @@ artistStore x = Store
   { getStore=x
   , getName="artists"
   , getTables=[
-      TableInfo "artist" ["id", "name", "realname",
+      TableInfo "temp_artist" ["id", "name", "realname",
                           "data_quality", "profile",
                           "urls", "aliases", "groups",
                           "members", "namevariations"]
