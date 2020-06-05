@@ -10,6 +10,8 @@ and Postgres' [COPY](http://www.postgresql.org/docs/9.4/static/sql-copy.html) to
 
 Inspired by [discogs-xml2db](https://github.com/philipmat/discogs-xml2db).
 
+TODO - add SQL script to copy permissions from in-use tables to staging tables; drop old tables
+
 ## Why?
 
 I wanted Discogs' data in a Postgres database and I had some issues with the existing solution:
